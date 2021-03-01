@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/luotianyi">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_city_manager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- 添加的城市 -->
+    <android.support.v7.widget.RecyclerView
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:id="@+id/added_city"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/add_btn"
+        android:layout_below="@id/toolbar_city_manager"
+        />
+
+    <!--&lt;!&ndash; 添加按钮 -->
+    <RelativeLayout
+        android:id="@+id/add_btn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="90dp"
+            android:layout_height="127dp"
+            android:drawableBottom="@drawable/add"
+            android:background="@drawable/touch_add"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            android:text="添加城市"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

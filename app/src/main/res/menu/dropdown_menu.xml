@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/flush"
+        android:title="刷新天气" />
+
+    <item
+        android:id="@+id/city_manager"
+        android:title="管理城市" />
+
+    <item
+        android:id="@+id/about"
+        android:title="关于BestGuo天气" />
+
+</menu>

@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="NoTitleAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- 设置状态栏颜色 -->
+        <item name="android:colorPrimaryDark">#427BEF</item>
+        <!-- 底部导航栏颜色 -->
+        <item name="android:navigationBarColor">#427BEF</item>
+    </style>
+
+    <!-- 设置 PopupMenu 菜单栏的样式 -->
+    <style name="RightTop" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <!-- 设置菜单在标题栏下方展示出来 -->
+        <item name="overlapAnchor">false</item>
+    </style>
+
+</resources>

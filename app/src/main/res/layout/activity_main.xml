@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/luotianyi"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/luotianyi"
+        android:popupTheme="@style/Theme.AppCompat.Light"/>
+
+    <!-- 天气详情 -->
+    <ScrollView
+        android:id="@+id/scroll_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 当前温度展示，显示温度和单位 -->
+            <RelativeLayout
+                android:id="@+id/temp_show"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp">
+
+                <ImageView
+                    android:id="@+id/image_weather"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_toStartOf="@+id/temperature"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/sun123"/>
+
+                <TextView
+                    android:id="@+id/temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="15"
+                    android:textColor="@color/white"
+                    android:textSize="60sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_toEndOf="@id/temperature"
+                    android:text="℃"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+
+                <!-- 最值气温 -->
+                <TextView
+                    android:id="@+id/temp_max_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/temperature"
+                    android:layout_centerHorizontal="true"
+                    android:text="20℃ / 9℃"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <!-- 天气情况以及空气质量 -->
+                <TextView
+                    android:id="@+id/weather_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/temp_max_min"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="天气：晴"
+                    android:textColor="@color/white" />
+
+                <!-- 天气情况以及空气质量 -->
+                <TextView
+                    android:id="@+id/air_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/weather_text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="湿度：55%，风力：2级"
+                    android:textColor="@color/white" />
+
+                <!-- 显示地区 -->
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/air_status"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60dp"
+                    android:drawablePadding="3dp"
+                    android:gravity="center_vertical"
+                    android:text="莲花县"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <!-- 上次更新时间 -->
+                <TextView
+                    android:id="@+id/last_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/location"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    android:text="上次更新时间：21:15"
+                    android:textColor="@color/white"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white" />
+
+            <!-- 24小时天气预报 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="24小时天气预报"
+                    android:textColor="@color/white" />
+
+                <!-- 24小时天气内容 -->
+                <android.support.v7.widget.RecyclerView
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/weather_24h"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white" />
+
+            <!-- 未来7天气情况 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="未来7天气预报"
+                    android:textColor="@color/white" />
+
+                <!-- 7天天气内容 -->
+                <android.support.v7.widget.RecyclerView
+                    android:layout_marginTop="15dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:minHeight="418dp"
+                    android:id="@+id/weather_7days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white" />
+
+            <!-- 今日指数 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="今日生活指数"
+                    android:textColor="@color/white" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_margin="15dp"
+                    android:id="@+id/today_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white" />
+
+            <!-- 空气质量等级 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="空气质量等级"
+                    android:textColor="@color/white" />
+
+                <top.bestguo.weatherapp.customize.StrokeTextView
+                    android:id="@+id/aqi_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="一级"
+                    android:textSize="18sp"
+                    android:textColor="#00e400"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/aqi_primary_pollutant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="一级"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:id="@+id/aqi_affect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="空气质量令人满意，基本无空气污染"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/aqi_measure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="适宜人群：各类人群可正常活动"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="天气版本：alpha-v0.0.1"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="作者：BestGuo"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

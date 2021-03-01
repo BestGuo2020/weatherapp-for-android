@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:background="@color/luotianyi">
+
+    <LinearLayout
+        android:id="@+id/city_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/city_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="乌鲁木齐"
+            android:layout_weight="1"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/text123"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:id="@+id/temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/temp_char"
+                    android:text="12"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/temp_char"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="℃"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/weather_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/temperature"
+                    android:gravity="center"
+                    android:text="雨夹雪"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_alignParentStart="true" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/weather_icon"
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:src="@drawable/sun123"
+                android:layout_toStartOf="@id/text123"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/sep"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+
+</LinearLayout>
