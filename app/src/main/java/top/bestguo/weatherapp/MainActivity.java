@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                         builder.setTitle("关于BestGuo天气")
                                 .setMessage("BestGuo天气作为一个入门的程序已经有了python版、java" +
                                         "web版和Android版，如果喜欢我的项目，欢迎在github上给个Star\n\n" +
-                                        "项目地址：https://github.com/")
+                                        "项目地址：https://github.com/BestGuo2020/weatherapp-for-android/")
                                 .setPositiveButton("好嘞", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     final RequestWeather requestWeather = new RequestWeather();
-                    requestWeather.setAppCode("*****************");
+                    requestWeather.setAppCode("**********************");
                     String resp = requestWeather.sendRequest("city", cityName);
                     Log.d("resp", resp);
                     // 发送消息
