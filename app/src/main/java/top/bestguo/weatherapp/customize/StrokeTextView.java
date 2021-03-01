@@ -3,15 +3,6 @@ package top.bestguo.weatherapp.customize;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
-/**
-
- * @Author : XiaoXred
-
- * @Time : On 2020/10/22 15:59
-
- * @Description : StrokeTextView  文字内容有描边的TextView
- */
-
 import android.graphics.Paint.Style;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -22,6 +13,8 @@ import android.widget.TextView;
 
 
 /*
+ * 来源：https://www.oschina.net/code/snippet_586849_37287
+ *
  * StrokeTextView的目标是给文字描边
  * 实现方法是两个TextView叠加,只有描边的TextView为底,实体TextView叠加在上面
  * 看上去文字就有个不同颜色的边框了
